@@ -17,7 +17,7 @@ $(PLATFORMS):
 	mkdir -p build/$(VERSION)/$(os)/
 	mv $(BINARY_NAME)$(if $(filter $(os),windows),.exe,) build/$(VERSION)/$(os)/
 	if [ $(os) = "windows" ]; then \
-		cd build/$(VERSION)/$(os) && zip ../$(BINARY_NAME)-$(VERSION)-$(os)-amd64.zip $(BINARY_NAME).exe; \
+		cd build/$(VERSION)/$(os) && zip ../../$(BINARY_NAME)-$(VERSION)-$(os)-amd64.zip $(BINARY_NAME).exe; \
 	else \
 		tar czvf build/$(BINARY_NAME)-$(VERSION)-$(os)-amd64.tar.gz -C build/$(VERSION)/$(os)/ $(BINARY_NAME); \
 	fi
